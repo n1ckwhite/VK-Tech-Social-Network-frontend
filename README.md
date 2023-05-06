@@ -1,46 +1,14 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+# От тебя требуется написать аналог социальной сети с ограниченным функционалом.
+## Требования к функционалу:
+- Страница авторизации с возможностью зарегистрироваться и войти в свой аккаунт,
+- Страница пользователя с аватаркой, кратким описанием (возраст, город, вуз) и постами, которые он написал. Если вы открыли свою страницу, должно быть поле для написания нового поста (есть возможность прикрепить одну фотографию к посту). Если вы открыли страницу другого пользователя там должна быть кнопка "Добавить в друзья" или "Удалить из друзей" с соответствующим функционалом.,
+- (опционально) Страница поиска по людям. На странице должен быть инпут для ввода имени и список найденных по имени людей.,
+- Страница с лентой, где в хронологическом списке отображаются посты от всех пользователей которых вы добавили в друзья. (плюсом будет реализация бесконечного скролла с подгрузкой по мере прокрутки). Посты в ленте можно лайкнуть и на них отображается суммарное колличество лайков (можно без подробностей кто лайкнул, только число),
+- Страница со списком ваших друзей, при клике на пользователя переходим на его страницу. Также должна быть возможность удалить из друзей прямо из списка,
+- (опционально) Страница с сообщениями, где списком отображаются все переписки. Можно зайти в переписку и отправить сообщение, после чего другой пользователь увидит это сообщение у себя.
+ Дизайн пользовательского интерфейса остается на ваше усмотрения, можно взять за эталон соц сеть ВКонтакте, либо аналоги.
+ ## Технологии:
+ - Фронтенд и бэкенд должны общаться посредством rest api запросов,
+ - Фронтенд должен быть написан на React с использованием typescript. Запрета на использование библиотек нету,
+ - В CSS верстке нужно показать умение пользоваться flexbox и grid,
+ - Бэкенд можно написать на nodejs, либо на любой удобной вам технологии и языке. Базу данных также можно выбрать любую.
