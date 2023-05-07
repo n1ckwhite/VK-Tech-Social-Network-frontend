@@ -23,6 +23,14 @@ export interface IInput extends InputHTMLAttributes<HTMLInputElement>{
     classname?: string,
 }
 
+export interface IPost {
+    id: string,
+    description: string,
+    likes: number,
+    photo: string,
+    authorId: string
+}
+
 export interface User {
     "id": string,
     "email": string,
@@ -32,8 +40,8 @@ export interface User {
     "description": string,
     "univ": string,
     "age": number,
-    "posts": [],
-    "friends": []
+    "posts": Array<IPost>,
+    "friends": [],
 }
 
 export interface IModal {
@@ -44,4 +52,8 @@ export interface IModal {
 
 export interface IModalEditProfile extends IModal {
     data: User
+}
+
+export interface IModalPhoto extends IModal {
+    imgSrc: string
 }

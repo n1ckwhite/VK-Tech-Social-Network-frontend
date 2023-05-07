@@ -6,6 +6,12 @@
     line-height: 30px;
 }
 
+.modal {
+    padding: 15px;
+    background: #152737;
+    border-radius: 16px;
+}
+
 .btn {
     margin-top: 20px;
 }

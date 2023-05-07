@@ -5,10 +5,10 @@ import {Label} from "../Label/Label";
 import {Input} from "../Input/Input";
 import {Button} from "../Button/Button";
 import styleModalProfileEdit from './ModalProfileEdit.module.css'
-import {useEditUserProfileMutation} from "../../service/api/loginApi";
+import {useEditUserProfileMutation} from "../../service/api/userApi";
 export const ModalProfileEdit: FC<IModalEditProfile> = ({data,isActive, closeModal}) => {
     const id = window.localStorage.getItem('id')
-    const [photo,setPhoto] = useState(data ? data.photo : '')
+    const [photo,setPhoto] = useState(data ?  data.photo : '')
     const [city, setCity] = useState(data ? data.city : '')
     const [description,setDescription] = useState(data ? data.description : "")
     const [age,setAge] = useState(data ? data.age : '')
@@ -21,7 +21,7 @@ export const ModalProfileEdit: FC<IModalEditProfile> = ({data,isActive, closeMod
     }
     return (
         <Modal isActive={isActive} closeModal={closeModal}>
-            <>
+            <div className={styleModalProfileEdit.modal}>
             <h2 className={styleModalProfileEdit.title}>Редактирование профиля</h2>
             <form onSubmit={editProfile}>
                 <Label text="URL ФОТО" htmlFor="img"/>
@@ -36,7 +36,7 @@ export const ModalProfileEdit: FC<IModalEditProfile> = ({data,isActive, closeMod
                 <Input value={univ} onChange={(e) => setUniv(e.target.value)} type="text" id="univ" placeholder="МГУ"/>
                 <Button classname={styleModalProfileEdit.btn} text="Редактировать"/>
             </form>
-            </>
+            </div>
         </Modal>
     )
 }

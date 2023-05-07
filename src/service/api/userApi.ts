@@ -2,7 +2,7 @@ import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
 import {API_USER} from "../../utils";
 import {User} from "../../types/types";
 
-export const loginApi = createApi({
+export const userApi = createApi({
     baseQuery: fetchBaseQuery({
         baseUrl: API_USER,
         prepareHeaders: (headers) => {
@@ -14,31 +14,44 @@ export const loginApi = createApi({
     tagTypes: ['User'],
     endpoints: (build) =>({
         getUser: build.query({
-            query: (id) => `${id}`
+            query: (id) => `/user/${id}`,
+            providesTags: [{type: "User", id: "Object"}]
         }),
+
         loginUser: build.mutation({
             query: (body) => ({
                 url: 'login',
                  method: "POST",
                     body
-            })
+            }),
+            invalidatesTags: [{type: 'User', id: "Object"}]
         }),
         registerUser: build.mutation({
             query: (body) => ({
-                url: '/register',
+                url: '/user/register',
                 method: "POST",
                 body
-            })
+            }),
+            invalidatesTags: [{type: 'User', id: "Object"}]
         }),
         editUserProfile: build.mutation({
             query: (body) => ({
-                url: '/edit',
+                url: '/user/edit',
                 method: "PUT",
                 body
             }),
+            invalidatesTags: [{type: 'User', id: "Object"}]
+        }),
+        addUserPost: build.mutation({
+            query: (body) => ({
+                url: '/post/add',
+                method: "POST",
+                body
+            }),
+            invalidatesTags: [{type: 'User', id: "Object"}]
         })
     })
 })
 
 
-export const {useGetUserQuery,useLoginUserMutation,useRegisterUserMutation, useEditUserProfileMutation} = loginApi
+export const {useGetUserQuery,useLoginUserMutation,useRegisterUserMutation, useEditUserProfileMutation,useAddUserPostMutation} = userApi

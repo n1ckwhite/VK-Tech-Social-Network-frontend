@@ -4,7 +4,7 @@ import {Button} from "../../components/Button/Button";
 import {Label} from "../../components/Label/Label";
 import {Input} from "../../components/Input/Input";
 import styleLoginAndRegPage from './LoginAndRegPage.module.css'
-import {useLoginUserMutation} from "../../service/api/loginApi";
+import {useLoginUserMutation} from "../../service/api/userApi";
 export const LoginPage: FC = () => {
     const history = useHistory()
     const token = window.localStorage.getItem('token')

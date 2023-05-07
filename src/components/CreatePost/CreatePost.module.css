@@ -1,0 +1,27 @@
+.input {
+    background: #152737;
+}
+
+.create {
+    margin-top: 20px;
+}
+
+
+.area {
+    font-family: inherit;
+    width: 100%;
+    resize: none;
+    outline: none;
+    background: #152737;
+    border: 0;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #859aad;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 8px;
+    outline: none;
+    padding: 14px 16px;
+    min-height: 150px;
+    margin-top: 20px;
+}

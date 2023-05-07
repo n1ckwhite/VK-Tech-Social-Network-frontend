@@ -4,7 +4,7 @@ import styleLoginAndRegPage from "../LoginPage/LoginAndRegPage.module.css";
 import {Label} from "../../components/Label/Label";
 import {Input} from "../../components/Input/Input";
 import {Button} from "../../components/Button/Button";
-import {useRegisterUserMutation} from "../../service/api/loginApi";
+import {useRegisterUserMutation} from "../../service/api/userApi";
 
 export const RegisterPage: FC = () => {
     const [errMsg,setErrMsg] = useState('')
