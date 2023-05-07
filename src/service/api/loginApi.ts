@@ -1,25 +1,19 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
 import {API_USER} from "../../utils";
-
-
-export interface User {
-    "id": string,
-    "email": string,
-    "name": string,
-    "photo": string,
-    "city": string,
-    "description": string,
-    "univ": string,
-    "age": number,
-    "posts": [],
-    "friends": []
-}
+import {User} from "../../types/types";
 
 export const loginApi = createApi({
-    baseQuery: fetchBaseQuery({baseUrl: API_USER}),
+    baseQuery: fetchBaseQuery({
+        baseUrl: API_USER,
+        prepareHeaders: (headers) => {
+            headers.set('authorization', `Bearer ${window.localStorage.getItem('token')}`)
+            return headers
+        }
+
+    }),
     tagTypes: ['User'],
     endpoints: (build) =>({
-        getUser: build.query<User,void>({
+        getUser: build.query({
             query: (id) => `${id}`
         }),
         loginUser: build.mutation({
@@ -35,9 +29,16 @@ export const loginApi = createApi({
                 method: "POST",
                 body
             })
+        }),
+        editUserProfile: build.mutation({
+            query: (body) => ({
+                url: '/edit',
+                method: "PUT",
+                body
+            }),
         })
     })
 })
 
 
-export const {useGetUserQuery,useLoginUserMutation,useRegisterUserMutation} = loginApi
+export const {useGetUserQuery,useLoginUserMutation,useRegisterUserMutation, useEditUserProfileMutation} = loginApi

@@ -8,14 +8,10 @@ export interface IProtectedRoute {
     exact?: boolean
 }
 
-export interface ICheckResponse {
-    ok: boolean,
-    json: () => void
-}
-
 export interface IButton extends ButtonHTMLAttributes<HTMLButtonElement>{
     text: string,
     classname?: string,
+    onclick?: () => void
 }
 
 export interface ILabel extends LabelHTMLAttributes<HTMLLabelElement>{
@@ -25,4 +21,27 @@ export interface ILabel extends LabelHTMLAttributes<HTMLLabelElement>{
 
 export interface IInput extends InputHTMLAttributes<HTMLInputElement>{
     classname?: string,
+}
+
+export interface User {
+    "id": string,
+    "email": string,
+    "name": string,
+    "photo": string,
+    "city": string,
+    "description": string,
+    "univ": string,
+    "age": number,
+    "posts": [],
+    "friends": []
+}
+
+export interface IModal {
+    children?: JSX.Element,
+    isActive: boolean,
+    closeModal: () => void,
+}
+
+export interface IModalEditProfile extends IModal {
+    data: User
 }

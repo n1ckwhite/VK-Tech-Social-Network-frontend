@@ -48,7 +48,7 @@ export const RegisterPage: FC = () => {
                     <Label text="Пароль" htmlFor="password"/>
                     <Input classname={error ? styleLoginAndRegPage.err : ''} type="password" id="password" placeholder="не менее 8 символов" value={password} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)} required/>
                     {errMsg && <p className={styleLoginAndRegPage.errMsg}>{errMsg}</p>}
-                    <Button classname={styleLoginAndRegPage.btn} text="Регистрация"/>
+                    <Button classname={errMsg ? styleLoginAndRegPage.mt0 : styleLoginAndRegPage.btn} text="Регистрация"/>
                 </form>
                 <Link className={styleLoginAndRegPage.link} to="/login">Войти</Link>
             </div>

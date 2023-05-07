@@ -5,10 +5,10 @@ import {IButton} from "../../types/types";
 
 
 
-export const Button: FC<IButton> = ({text,classname,...rest}) => {
+export const Button: FC<IButton> = ({text,classname,onclick,...rest}) => {
     return (
         <>
-        <button className={cn(styleButton.button,classname)}>{text}</button>
+        <button className={cn(styleButton.button,classname)} onClick={onclick}>{text}</button>
         </>
     )
 }

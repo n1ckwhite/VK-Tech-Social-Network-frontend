@@ -40,6 +40,10 @@
     margin-top: 22px;
 }
 
+.mt0 {
+    margin-top: 0;
+}
+
 .link {
     color: #b3c0cc;
     font-size: 14px;
@@ -60,8 +64,9 @@
 }
 
 .errMsg {
+    marign:0;
+    margin-top: 8px;
     font-size: 12px;
-    margin: 0;
     color: red;
     text-align: center;
 }

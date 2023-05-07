@@ -9,7 +9,7 @@
     box-sizing: border-box;
     cursor: pointer;
     border-radius: 8px;
-    transition: .2s;
+    transition: background .2s;
     width: 100%;
     font-family: inherit;
     font-weight: 700;
