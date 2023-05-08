@@ -5,7 +5,7 @@ import {IModal} from "../../types/types";
 
 
 
-const modal = document.getElementById('modals') as any
+const modal = document.getElementById('modals') as HTMLDivElement
 
 
 export const Modal: React.FC<IModal> = ({children,isActive, closeModal}) => {
