@@ -40,8 +40,8 @@ export interface User {
     "description": string,
     "univ": string,
     "age": number,
-    "posts": Array<IPost>,
-    "friends": [],
+    "posts"?: Array<IPost>,
+    "friends"?: [],
 }
 
 export interface IModal {
@@ -67,3 +67,21 @@ export interface IModalPhoto extends IModal {
     imgSrc: string
 }
 
+export interface IUserItem {
+    photo: string,
+    name: string,
+    email: string,
+    id: string
+}
+
+export interface IFriend {
+    id?: string,
+    friendId: string,
+    friendName?: string,
+    friendPhoto?: string,
+    friendAge?: number,
+}
+
+export interface IQuizParams {
+    id: string
+}

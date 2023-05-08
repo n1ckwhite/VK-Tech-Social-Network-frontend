@@ -1,7 +1,7 @@
 import {FC, useState} from "react";
 import {useGetUserQuery} from "../../service/api/userApi";
 import {Button} from "../../components/Button/Button";
-import styleMainPage from './MainPage.module.css'
+import styleMainPage from './MainandUserPage.module.css'
 import {Loading} from "../../components/Loading/Loading";
 import {ModalProfileEdit} from "../../components/ModalProfileEdit/ModalProfileEdit";
 import {ModalPhoto} from "../../components/ModalPhoto/ModalPhoto";
@@ -59,8 +59,7 @@ export const MainPage: FC = () => {
                     <p className={styleMainPage.posts}>Постов: {data && data.posts.length}</p>
                 </div>
                 <div className={styleMainPage.list}>
-                   <h2 className={styleMainPage.subtitle}>Мои посты :</h2>
-                    <CreatePost/>
+                   <CreatePost/>
                     <ul className={styleMainPage.ul}>
                         {data && data.posts.map((post: IPost) => {
                             return (
@@ -72,7 +71,6 @@ export const MainPage: FC = () => {
                     </ul>
                 </div>
             </main>
-
             <ModalProfileEdit data={data} isActive={modalActive} closeModal={closeModal}/>
         </>
     )

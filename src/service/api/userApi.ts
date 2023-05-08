@@ -1,6 +1,5 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
 import {API_USER} from "../../utils";
-import {User} from "../../types/types";
 
 export const userApi = createApi({
     baseQuery: fetchBaseQuery({
@@ -17,7 +16,6 @@ export const userApi = createApi({
             query: (id) => `/user/${id}`,
             providesTags: [{type: "User", id: "Object"}]
         }),
-
         loginUser: build.mutation({
             query: (body) => ({
                 url: '/user/login',
@@ -73,9 +71,33 @@ export const userApi = createApi({
                 body
             }),
             invalidatesTags: [{type: 'User', id: "Object"}]
-        })
+        }),
+        searchUsers: build.mutation({
+            query: (body) => ({
+                url: '/user/search/',
+                method: "POST",
+                body,
+            }),
+            invalidatesTags: [{type: 'User', id: "Object"}]
+        }),
+        addFriendUser: build.mutation({
+            query: (body) => ({
+                url: `/user/add/${body.param}`,
+                method: "POST",
+                body,
+            }),
+            invalidatesTags: [{type: 'User', id: "Object"}]
+        }),
+        deleteFriendUser: build.mutation({
+            query: (body) => ({
+            url: `/user/delete/${body.param}`,
+            method: "DELETE",
+            body,
+        }),
+        invalidatesTags: [{type: 'User', id: "Object"}]
+        }),
     })
 })
 
 
-export const {useGetUserQuery,useLoginUserMutation,useRegisterUserMutation, useEditUserProfileMutation,useAddUserPostMutation,useLikePostMutation, useDeletePostMutation, useEditPostMutation} = userApi
+export const {useGetUserQuery,useLoginUserMutation,useRegisterUserMutation, useEditUserProfileMutation,useAddUserPostMutation,useLikePostMutation, useDeletePostMutation, useEditPostMutation, useSearchUsersMutation,useAddFriendUserMutation,useDeleteFriendUserMutation} = userApi

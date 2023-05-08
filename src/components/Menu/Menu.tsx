@@ -10,10 +10,12 @@ export const Menu: FC = () => {
     const closeBurger = () => {
         setActiveMenu(false)
     }
+    const id = window.localStorage.getItem('id')
     return (
         <>
         <menu className={styleMenu.menu}>
-            <Link className={styleMenu.link} to="/">Моя страница</Link>
+            <Link className={styleMenu.link} to='/'>Моя страница</Link>
+            <Link className={styleMenu.link} to="/search">Поиск</Link>
             <Link className={styleMenu.link} to="/friends">Друзья</Link>
             <Link className={styleMenu.link} to="/post">Новости</Link>
             <Link className={styleMenu.link} to="/mail">Сообщения</Link>
@@ -26,6 +28,7 @@ export const Menu: FC = () => {
             <div className={cn(styleMenu.links, activeMenu ? styleMenu.linksActive : '')}>
                 <button className={styleMenu.btn} onClick={closeBurger}>&#10005;</button>
                 <Link className={styleMenu.linkM} to="/">Моя страница</Link>
+                <Link className={styleMenu.linkM} to="/search">Поиск</Link>
                 <Link className={styleMenu.linkM} to="/friends">Друзья</Link>
                 <Link className={styleMenu.linkM} to="/post">Новости</Link>
                 <Link className={styleMenu.linkM} to="/mail">Сообщения</Link>

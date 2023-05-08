@@ -3,12 +3,14 @@ import stylePost from './Post.module.css'
 import hearthImg from '../../icons/hearth.svg'
 import editImg from '../../icons/edit.svg'
 import hearthActiveImg from '../../icons/hearthActive.svg'
-import {IPost} from "../../types/types";
+import {IPost, IQuizParams} from "../../types/types";
 import {useLikePostMutation} from "../../service/api/userApi";
 import {ModalConfirm} from "../ModalConfirm/ModalConfirm";
 import {ModalEditPost} from "../ModalEditPost/ModalEditPost";
 import {ModalPhoto} from "../ModalPhoto/ModalPhoto";
+import {useParams} from "react-router-dom";
 export const Post: FC<IPost> = ({photo,description,likes,id}) => {
+    const params = useParams<IQuizParams>()
     const [activeModalConfirm,setActiveModalConfirm] = useState(false)
     const [activeModalPostEditor,setActiveModalPostEditor] = useState(false)
     const [activePhoto,setActivePhoto] = useState(false)
@@ -52,16 +54,16 @@ export const Post: FC<IPost> = ({photo,description,likes,id}) => {
     return (
         <>
         <span className={stylePost.post}>
-            <button className={stylePost.delete} onClick={openModalConfirm}>&#10005;</button>
-            <button onClick={openModalPostEditor} className={stylePost.edit}><img className={stylePost.editImg} src={editImg} alt="редактор"/></button>
+            {params.id !== undefined ? '' : <button className={stylePost.delete} onClick={openModalConfirm}>&#10005;</button>}
+            {params.id !== undefined ? '' : <button onClick={openModalPostEditor} className={stylePost.edit}><img className={stylePost.editImg} src={editImg} alt="редактор"/></button>}
             <img onClick={openPhoto} className={stylePost.img} src={photo}/>
             <span className={stylePost.text}>
             <p className={stylePost.descr}>{description}</p>
                 <span className={stylePost.likes}><img onClick={handleLike} className={stylePost.hearth} alt="ФОТО" src={likePost ? hearthActiveImg : hearthImg}/><span className={stylePost.count}>{like}</span></span>
             </span>
         </span>
-            <ModalConfirm id={id} isActive={activeModalConfirm} closeModal={closeModalConfrim}/>
-            <ModalEditPost photo={photo} description={description}  id={id} isActive={activeModalPostEditor} closeModal={closeModalPostEditor}/>
+            {params.id !== undefined ? '' : <ModalConfirm id={id} isActive={activeModalConfirm} closeModal={closeModalConfrim}/>}
+            {params.id !== undefined ? '' : <ModalEditPost photo={photo} description={description}  id={id} isActive={activeModalPostEditor} closeModal={closeModalPostEditor}/>}
             <ModalPhoto imgSrc={photo} isActive={activePhoto} closeModal={closeModalPhoto}/>
         </>
     )

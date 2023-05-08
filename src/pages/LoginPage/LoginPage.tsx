@@ -20,7 +20,7 @@ export const LoginPage: FC = () => {
             await loginUser({email,password}).unwrap().then((data) => {
                 window.localStorage.setItem('id', data.id)
                 window.localStorage.setItem('token', data.token)
-                history.replace({pathname: '/'})
+                history.replace({pathname: `/`})
                 setErrMsg('')
             }).catch(err => {
                 setErrMsg(err.data.message)
