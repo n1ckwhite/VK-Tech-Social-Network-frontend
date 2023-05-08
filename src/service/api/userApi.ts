@@ -20,7 +20,7 @@ export const userApi = createApi({
 
         loginUser: build.mutation({
             query: (body) => ({
-                url: 'login',
+                url: '/user/login',
                  method: "POST",
                     body
             }),
@@ -49,9 +49,33 @@ export const userApi = createApi({
                 body
             }),
             invalidatesTags: [{type: 'User', id: "Object"}]
+        }),
+        likePost: build.mutation({
+            query: (body) => ({
+                url: `/post/like/${body.id}`,
+                method: 'POST',
+                body
+            }),
+            invalidatesTags: [{type: 'User', id: "Object"}]
+        }),
+        deletePost: build.mutation({
+            query: (id) => ({
+                url: `/post/delete/${id}`,
+                method: "DELETE",
+                id
+            }),
+            invalidatesTags: [{type: 'User', id: "Object"}]
+        }),
+        editPost: build.mutation({
+            query: (body) => ({
+                url: `/post/edit/${body.id}`,
+                method: 'PUT',
+                body
+            }),
+            invalidatesTags: [{type: 'User', id: "Object"}]
         })
     })
 })
 
 
-export const {useGetUserQuery,useLoginUserMutation,useRegisterUserMutation, useEditUserProfileMutation,useAddUserPostMutation} = userApi
+export const {useGetUserQuery,useLoginUserMutation,useRegisterUserMutation, useEditUserProfileMutation,useAddUserPostMutation,useLikePostMutation, useDeletePostMutation, useEditPostMutation} = userApi

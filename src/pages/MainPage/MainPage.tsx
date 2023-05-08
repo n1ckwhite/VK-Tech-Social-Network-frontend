@@ -6,9 +6,9 @@ import styleMainPage from './MainPage.module.css'
 import {Loading} from "../../components/Loading/Loading";
 import {ModalProfileEdit} from "../../components/ModalProfileEdit/ModalProfileEdit";
 import {ModalPhoto} from "../../components/ModalPhoto/ModalPhoto";
-import {Input} from "../../components/Input/Input";
 import {CreatePost} from "../../components/CreatePost/CreatePost";
 import {IPost} from "../../types/types";
+import {Post} from "../../components/Post/Post";
 export const MainPage: FC = () => {
     const [modalPhotoActive,setModalPhotoActive] = useState(false)
     const [modalActive, setModalActive] = useState(false)
@@ -50,7 +50,7 @@ export const MainPage: FC = () => {
             </menu>
             <main className={styleMainPage.main}>
                 <div className={styleMainPage.profile}>
-                    {data && data.photo === "null" ? (
+                    {data && data.photo === "" ? (
                         <div className={styleMainPage.img}>?</div>
                         ) : (
                             <>
@@ -61,10 +61,10 @@ export const MainPage: FC = () => {
                             }
                     <p className={styleMainPage.name}>{data && data.name}</p>
                     <p className={styleMainPage.email}>{data && data.email}</p>
-                    <p className={styleMainPage.city}>Город : {data && data.city === 'null' || data.city === '' ? "Не указан" : data.city}</p>
-                    <p className={styleMainPage.descr}>{data && data.description === 'null' || data.description === '' ? "Описание не указано" : data.description}</p>
-                    {<p className={styleMainPage.age}>Возраст : {data && data.age === 0 || data.age === '' ? " не указан" : data.age}</p>}
-                    <p className={styleMainPage.univ}>ВУЗ: {data && data.univ === "null" || data.univ === '' ? " не указан" : data.univ}</p>
+                    <p className={styleMainPage.city}>Город : {data &&  data.city === '' ? "Не указан" : data.city}</p>
+                    <p className={styleMainPage.descr}>{data && data.description === '' ? "Описание не указано" : data.description}</p>
+                    {<p className={styleMainPage.age}>Возраст : {data && data.age === '' ? " не указан" : data.age}</p>}
+                    <p className={styleMainPage.univ}>ВУЗ: {data && data.univ === '' ? " не указан" : data.univ}</p>
                     <Button onclick={activeModal} classname={styleMainPage.btnProf} text="Редактировать"/>
                     <p className={styleMainPage.friends}>Друзей: {data && data.friends.length}</p>
                     <p className={styleMainPage.posts}>Постов: {data && data.posts.length}</p>
@@ -72,13 +72,11 @@ export const MainPage: FC = () => {
                 <div className={styleMainPage.list}>
                    <h2 className={styleMainPage.subtitle}>Мои посты :</h2>
                     <CreatePost/>
-                    <ul>
+                    <ul className={styleMainPage.ul}>
                         {data && data.posts.map((post: IPost) => {
                             return (
-                                <li>
-                                    {post.photo === 'null' ? '' : (<img src={post.photo}/>)}
-                                <p>{post.description}</p>
-                                    <p>Лайков: {post.likes}</p>
+                                <li className={styleMainPage.li} key={post.id}>
+                                <Post id={post.id} photo={post.photo} description={post.description} likes={post.likes}/>
                                 </li>
                             )
                         }).reverse()}

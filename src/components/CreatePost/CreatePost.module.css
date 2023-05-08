@@ -6,22 +6,15 @@
     margin-top: 20px;
 }
 
+.err {
+    border: 2px solid red;
+}
 
-.area {
-    font-family: inherit;
-    width: 100%;
-    resize: none;
-    outline: none;
-    background: #152737;
-    border: 0;
-    border-radius: 8px;
-    box-sizing: border-box;
-    color: #859aad;
-    font-size: 14px;
-    line-height: 20px;
-    margin-bottom: 8px;
-    outline: none;
-    padding: 14px 16px;
-    min-height: 150px;
-    margin-top: 20px;
+
+.errMsg {
+    marign: 10px 0;
+    margin-top: 8px;
+    font-size: 12px;
+    color: red;
+    text-align: center;
 }
