@@ -1,7 +1,6 @@
 import {FC, useState} from "react";
 import {useGetUserQuery} from "../../service/api/userApi";
 import {Button} from "../../components/Button/Button";
-import {Link, useHistory} from "react-router-dom";
 import styleMainPage from './MainPage.module.css'
 import {Loading} from "../../components/Loading/Loading";
 import {ModalProfileEdit} from "../../components/ModalProfileEdit/ModalProfileEdit";
@@ -9,17 +8,15 @@ import {ModalPhoto} from "../../components/ModalPhoto/ModalPhoto";
 import {CreatePost} from "../../components/CreatePost/CreatePost";
 import {IPost} from "../../types/types";
 import {Post} from "../../components/Post/Post";
+import {Menu} from "../../components/Menu/Menu";
+import {Header} from "../../Header/Header";
+
 export const MainPage: FC = () => {
     const [modalPhotoActive,setModalPhotoActive] = useState(false)
     const [modalActive, setModalActive] = useState(false)
     const id = window.localStorage.getItem('id')
     const {data, isLoading} = useGetUserQuery(id)
-    const history = useHistory()
-    const exitUser = () => {
-        window.localStorage.removeItem('id')
-        window.localStorage.removeItem('token')
-        history.replace({pathname: "/login"})
-    }
+
     if(isLoading) {
         return <Loading/>
     }
@@ -37,17 +34,9 @@ export const MainPage: FC = () => {
         setModalPhotoActive(true)
     }
     return (
-        <div>
-            <header className={styleMainPage.header}>
-                <h1 className={styleMainPage.title}>В мыле</h1>
-                <Button text="Выйти" classname={styleMainPage.btn} onclick={exitUser}/>
-            </header>
-            <menu className={styleMainPage.menu}>
-                <Link className={styleMainPage.link} to="/">Моя страница</Link>
-                <Link className={styleMainPage.link} to="/friends">Друзья</Link>
-                <Link className={styleMainPage.link} to="/post">Новости</Link>
-                <Link className={styleMainPage.link} to="/mail">Сообщения</Link>
-            </menu>
+        <>
+            <Header/>
+            <Menu/>
             <main className={styleMainPage.main}>
                 <div className={styleMainPage.profile}>
                     {data && data.photo === "" ? (
@@ -85,6 +74,6 @@ export const MainPage: FC = () => {
             </main>
 
             <ModalProfileEdit data={data} isActive={modalActive} closeModal={closeModal}/>
-        </div>
+        </>
     )
 }

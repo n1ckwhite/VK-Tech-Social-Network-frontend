@@ -8,7 +8,7 @@
     justify-content: center;
     align-items: center;
     background: rgba(0,0,0,.5);
-    z-index: 1;
+    z-index: 5;
 }
 
 
@@ -16,6 +16,7 @@
     min-width: 300px;
     position: relative;
     z-index: 100;
+    padding: 0 20px;
 }
 
 .btn {
@@ -24,10 +25,11 @@
     color: #fff;
     font-size: 60px;
     position: absolute;
-    top: -60px;
-    right: -60px;
+    top: -80px;
+    right: 20px;
     cursor: pointer;
     transition: .2s;
+    padding: 0;
 }
 
 .overlay {
@@ -36,7 +38,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: -1;
+    z-index: 5;
 }
 
 .btn:hover {
@@ -46,4 +48,17 @@
 .errMsg {
     border: 1px solid red;
     margin: 10px 0;
+}
+
+@media screen and (max-height: 500px) {
+    .modal {
+        height: 100vh;
+        overflow-y: scroll;
+    }
+
+    .btn {
+        top: 0;
+        font-size: 50px;
+        right: 35px;
+    }
 }
