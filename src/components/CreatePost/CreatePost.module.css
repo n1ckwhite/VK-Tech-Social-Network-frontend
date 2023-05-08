@@ -1,20 +1,19 @@
 .input {
-    background: #152737;
+  background: #152737;
 }
 
 .create {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .err {
-    border: 2px solid red;
+  border: 2px solid red;
 }
 
-
 .errMsg {
-    marign: 10px 0;
-    margin-top: 8px;
-    font-size: 12px;
-    color: red;
-    text-align: center;
+  marign: 10px 0;
+  margin-top: 8px;
+  font-size: 12px;
+  color: red;
+  text-align: center;
 }

@@ -1,18 +1,17 @@
 .input {
-    background: #061018;
-    border: 0;
-    border-radius: 8px;
-    box-sizing: border-box;
-    color: #859aad;
-    font-size: 14px;
-    line-height: 20px;
-    margin-bottom: 8px;
-    outline: none;
-    padding: 14px 16px;
-    width: 100%;
+  background: #061018;
+  border: 0;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #859aad;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 8px;
+  outline: none;
+  padding: 14px 16px;
+  width: 100%;
 }
 
-
 .input:last-of-type {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }

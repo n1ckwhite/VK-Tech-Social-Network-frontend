@@ -1,64 +1,63 @@
 .div {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(0,0,0,.5);
-    z-index: 5;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 5;
 }
 
-
 .modal {
-    min-width: 300px;
-    position: relative;
-    z-index: 100;
-    padding: 0 20px;
+  min-width: 300px;
+  position: relative;
+  z-index: 100;
+  padding: 0 20px;
 }
 
 .btn {
-    background: transparent;
-    border: 0;
-    color: #fff;
-    font-size: 60px;
-    position: absolute;
-    top: -80px;
-    right: 20px;
-    cursor: pointer;
-    transition: .2s;
-    padding: 0;
+  background: transparent;
+  border: 0;
+  color: #fff;
+  font-size: 60px;
+  position: absolute;
+  top: -80px;
+  right: 20px;
+  cursor: pointer;
+  transition: 0.2s;
+  padding: 0;
 }
 
 .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 5;
 }
 
 .btn:hover {
-    opacity: .7;
+  opacity: 0.7;
 }
 
 .errMsg {
-    border: 1px solid red;
-    margin: 10px 0;
+  border: 1px solid red;
+  margin: 10px 0;
 }
 
 @media screen and (max-height: 500px) {
-    .modal {
-        height: 100vh;
-        overflow-y: scroll;
-    }
+  .modal {
+    height: 100vh;
+    overflow-y: scroll;
+  }
 
-    .btn {
-        top: 0;
-        font-size: 50px;
-        right: 35px;
-    }
+  .btn {
+    top: 0;
+    font-size: 50px;
+    right: 35px;
+  }
 }
