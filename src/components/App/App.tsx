@@ -7,6 +7,7 @@ import {RegisterPage} from "../../pages/RegisterPage/RegisterPage";
 import {ErrorPage} from "../../pages/ErrorPage/ErrorPage";
 import {SearchPage} from "../../pages/SearchPage/SearchPage";
 import {UserPage} from "../../pages/UserPage/UserPage";
+import {FriendsPage} from "../../pages/FriendsPage/FriendsPage";
 
 export const  App: FC = () => {
   return (
@@ -19,7 +20,7 @@ export const  App: FC = () => {
                 <SearchPage/>
             </ProtectedRoute>
             <ProtectedRoute path="/friends" exact={true}>
-                <h1>title</h1>
+                <FriendsPage/>
             </ProtectedRoute>
             <Route path="/login" exact={true}>
                 <LoginPage/>

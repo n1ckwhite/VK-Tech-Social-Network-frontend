@@ -46,7 +46,7 @@ export const SearchPage: FC = () => {
                         {resultUser && resultUser.map((user: User) => {
                             return (
                                 <li key={user.id} className={styleSearchPage.li}>
-                                        <UserItem id={user.id} photo={user.photo} name={user.name} email={user.email}/>
+                                        <UserItem id={user.id} photo={user.photo} name={user.name}/>
                                 </li>
                             )
                         })}

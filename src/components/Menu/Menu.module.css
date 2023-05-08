@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     position: absolute;
-    left: 0;
+    left: 20px;
     top: 140px;
     box-sizing: border-box;
     z-index: 2;
@@ -101,7 +101,7 @@
 }
 
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1250px) {
     .menu {
         display: none;
     }

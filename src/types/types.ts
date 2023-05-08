@@ -68,10 +68,9 @@ export interface IModalPhoto extends IModal {
 }
 
 export interface IUserItem {
-    photo: string,
-    name: string,
-    email: string,
-    id: string
+    photo?: string,
+    name?: string,
+    id?: string
 }
 
 export interface IFriend {
@@ -84,4 +83,9 @@ export interface IFriend {
 
 export interface IQuizParams {
     id: string
+}
+
+export interface IHandleFriendButton {
+    addFriend: () => void,
+    removeFriend: () => void
 }

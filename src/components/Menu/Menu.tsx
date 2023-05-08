@@ -10,7 +10,6 @@ export const Menu: FC = () => {
     const closeBurger = () => {
         setActiveMenu(false)
     }
-    const id = window.localStorage.getItem('id')
     return (
         <>
         <menu className={styleMenu.menu}>
