@@ -12,3 +12,5 @@
  - Фронтенд должен быть написан на React с использованием typescript. Запрета на использование библиотек нету,
  - В CSS верстке нужно показать умение пользоваться flexbox и grid,
  - Бэкенд можно написать на nodejs, либо на любой удобной вам технологии и языке. Базу данных также можно выбрать любую.
+## Ссылка на GitHubPages: 
+[Готовый проект](https://n1ckwhite.github.io/React-Burger/](https://n1ckwhite.github.io/VK-Tech-Social-Network-frontend/)
