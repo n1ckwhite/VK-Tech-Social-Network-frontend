@@ -7,7 +7,7 @@
  */
 
 import { FC, useState } from "react";
-import { Header } from "../../Header/Header";
+import { Header } from "../../components/Header/Header";
 import { Menu } from "../../components/Menu/Menu";
 import {
   useAddFriendUserMutation,

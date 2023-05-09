@@ -8,7 +8,7 @@
 
 import { FC, SyntheticEvent, useState } from "react";
 import styleSearchPage from "./SearchPage.module.css";
-import { Header } from "../../Header/Header";
+import { Header } from "../../components/Header/Header";
 import { Menu } from "../../components/Menu/Menu";
 import { Input } from "../../components/Input/Input";
 import { Button } from "../../components/Button/Button";

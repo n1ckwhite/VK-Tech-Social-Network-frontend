@@ -7,7 +7,7 @@
  */
 
 import { FC } from "react";
-import { Header } from "../../Header/Header";
+import { Header } from "../../components/Header/Header";
 import { Menu } from "../../components/Menu/Menu";
 import { useGetPostsQuery } from "../../service/api/userApi";
 import stylePostsPage from "./PostsPage.module.css";

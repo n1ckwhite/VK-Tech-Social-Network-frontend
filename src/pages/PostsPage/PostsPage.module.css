@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+.title {
+  color: #fff;
+  margin: 0 0 20px 0;
+  text-align: center;
+}
 .ul {
   margin: 0;
   padding: 0;

@@ -16,8 +16,7 @@ import { CreatePost } from "../../components/CreatePost/CreatePost";
 import { IPost } from "../../types/types";
 import { Post } from "../../components/Post/Post";
 import { Menu } from "../../components/Menu/Menu";
-import { Header } from "../../Header/Header";
-
+import { Header } from "../../components/Header/Header";
 export const MainPage: FC = () => {
   const [modalPhotoActive, setModalPhotoActive] = useState(false);
   const [modalActive, setModalActive] = useState(false);

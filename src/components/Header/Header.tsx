@@ -8,7 +8,7 @@
 
 import { FC } from "react";
 import styleHeader from "./Header.module.css";
-import { Button } from "../components/Button/Button";
+import { Button } from "../Button/Button";
 import { useHistory } from "react-router-dom";
 
 export const Header: FC = () => {
