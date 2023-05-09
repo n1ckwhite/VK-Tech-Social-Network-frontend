@@ -1,3 +1,14 @@
+/**
+ * @component
+ * Компонент-Button
+ * @props
+ * classname - доп класс для компонента
+ * text - текст для кнопки
+ * onclick - функция, которая вешается на кнопку
+ * @returns
+ * возвращает button с готовыми стилями
+ */
+
 import { FC } from "react";
 import styleButton from "./Button.module.css";
 import cn from "classnames";

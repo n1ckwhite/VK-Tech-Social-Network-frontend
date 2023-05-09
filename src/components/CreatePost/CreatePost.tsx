@@ -1,3 +1,11 @@
+/**
+ * @component
+ * Компонент-CreatePost
+ * Добавляет пост, если фото URL начинается с https://, поле фото и описание не пустые
+ * @returns
+ * возвращает button с готовыми стилями
+ */
+
 import { FC, useState } from "react";
 import { Input } from "../Input/Input";
 import { Button } from "../Button/Button";

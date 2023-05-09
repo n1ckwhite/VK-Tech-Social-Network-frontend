@@ -1,3 +1,14 @@
+/**
+ * @component
+ * Компонент-ModalConfirm
+ * @props
+ * id - получает id поста,
+ * isActive - true/false - если активно, отображает попап
+ * closeModal - функция закрытия попапа
+ * @returns
+ * возвращает ModalConfirm - подтверждение на удаление поста
+ */
+
 import { FC } from "react";
 import { Modal } from "../Modal/Modal";
 import { IModalConfirmAndEditPost } from "../../types/types";

@@ -1,3 +1,10 @@
+/**
+ * @component
+ * Компонент-Loading
+ * @returns
+ * возвращает Loading, для использование прогрузки пользователей
+ */
+
 import { FC } from "react";
 import styleLoading from "./Loading.module.css";
 export const Loading: FC = () => {

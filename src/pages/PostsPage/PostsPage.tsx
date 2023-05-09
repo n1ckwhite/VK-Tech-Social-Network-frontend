@@ -1,3 +1,11 @@
+/**
+ * @component
+ * Страница-PostPage
+ * Отправляет запрос на получение пользователей и их постов
+ * @returns
+ * возвращает PostPage - с постами пользователей
+ */
+
 import { FC } from "react";
 import { Header } from "../../Header/Header";
 import { Menu } from "../../components/Menu/Menu";
@@ -23,7 +31,7 @@ export const PostsPage: FC = () => {
                   <li className={stylePostsPage.posts} key={user.id}>
                     <Link
                       className={stylePostsPage.linkProf}
-                      to={`/${user.id}`}
+                      to={`/user/${user.id}`}
                     >
                       {user.photo && user.photo.length !== 0 ? (
                         <img

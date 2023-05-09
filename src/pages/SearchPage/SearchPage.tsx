@@ -1,3 +1,11 @@
+/**
+ * @component
+ * Страница-SearchPage
+ * Отправляет запрос на получение пользователей
+ * @returns
+ * возвращает SearchPage - результат поиска пользователей
+ */
+
 import { FC, SyntheticEvent, useState } from "react";
 import styleSearchPage from "./SearchPage.module.css";
 import { Header } from "../../Header/Header";

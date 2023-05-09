@@ -1,3 +1,11 @@
+/**
+ * @component
+ * Страница-FriendsPage
+ * Отправляет запрос на получение друзей, если друзья есть, то отображает их
+ * @returns
+ * возвращает FriendsPage - возвращает список друзей
+ */
+
 import { FC } from "react";
 import { Header } from "../../Header/Header";
 import { Menu } from "../../components/Menu/Menu";

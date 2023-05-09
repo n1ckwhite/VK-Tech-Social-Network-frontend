@@ -1,3 +1,11 @@
+/**
+ * @component
+ * Страница-LoginPage
+ * Отправляет запрос на получение token и id, token отправляется в header {authorization} для доступа действий на сайте
+ * @returns
+ * возвращает LoginPage - с полем email и password
+ */
+
 import React, { FC, SyntheticEvent, useState } from "react";
 import { Link, Redirect, useHistory } from "react-router-dom";
 import { Button } from "../../components/Button/Button";

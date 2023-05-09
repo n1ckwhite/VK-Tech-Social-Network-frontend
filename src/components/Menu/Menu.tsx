@@ -1,3 +1,11 @@
+/**
+ * @component
+ * Компонент-Menu
+ * Отправляет пользователя на разные страницы сайта
+ * @returns
+ * возвращает компонент Меню с адаптивом под разные экраны
+ */
+
 import { FC, useState } from "react";
 import styleMenu from "./Menu.module.css";
 import { Link } from "react-router-dom";
@@ -25,9 +33,6 @@ export const Menu: FC = () => {
         <Link className={styleMenu.link} to="/posts">
           Новости
         </Link>
-        <Link className={styleMenu.link} to="/mail">
-          Сообщения
-        </Link>
       </menu>
       <div className={styleMenu.burger} onClick={activeBurger}>
         <span className={styleMenu.span}></span>
@@ -51,9 +56,6 @@ export const Menu: FC = () => {
         </Link>
         <Link className={styleMenu.linkM} to="/posts">
           Новости
-        </Link>
-        <Link className={styleMenu.linkM} to="/mail">
-          Сообщения
         </Link>
       </div>
     </>

@@ -1,3 +1,14 @@
+/**
+ * @component
+ * Компонент-ModalProfileEdit
+ * @props
+ * isActive - true/false - если активно, отображает попап
+ * closeModal - функция закрытия попапа
+ * data - это объект, который содержит описание, фото, город, возраст, ВУЗ, пользователя, по дефолту ""
+ * @returns
+ * возвращает ModalProfileEdit - отображает редактирование профиля пользователя
+ */
+
 import { FC, SyntheticEvent, useState } from "react";
 import { Modal } from "../Modal/Modal";
 import { IModalEditProfile } from "../../types/types";

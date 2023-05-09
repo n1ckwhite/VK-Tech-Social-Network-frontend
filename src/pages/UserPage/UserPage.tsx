@@ -1,3 +1,11 @@
+/**
+ * @component
+ * Страница-UserPage
+ * Отправляет запрос на получение пользователя с конкретным id
+ * @returns
+ * возвращает UserPage - информация о другом пользователе
+ */
+
 import { FC, useState } from "react";
 import { Header } from "../../Header/Header";
 import { Menu } from "../../components/Menu/Menu";

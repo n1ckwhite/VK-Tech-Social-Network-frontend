@@ -1,3 +1,17 @@
+/**
+ * @component
+ * Главный компонент приложения
+ * Страница главного пользователя /
+ * Страница поиска пользователей /search
+ * Страница друзей /friends
+ * Страница новостей /posts
+ * Страница входа на сайт /login
+ * Страница регистрации /register
+ * Страница пользователя /user/:id
+ * @returns
+ * возвращает страницы проекта по роутингу
+ */
+
 import React, { FC } from "react";
 import { Route, Switch } from "react-router-dom";
 import { ProtectedRoute } from "../ProtectedRoute/ProtectedRoute";
@@ -32,10 +46,10 @@ export const App: FC = () => {
         <Route path="/register" exact={true}>
           <RegisterPage />
         </Route>
-        <ProtectedRoute path="/:id" exact={true}>
+        <ProtectedRoute path="/user/:id" exact={true}>
           <UserPage />
         </ProtectedRoute>
-        <Route path="*">
+        <Route path="*" exact={true}>
           <ErrorPage />
         </Route>
       </Switch>

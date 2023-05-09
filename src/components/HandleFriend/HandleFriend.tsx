@@ -1,3 +1,13 @@
+/**
+ * @component
+ * Компонент-Button
+ * @props
+ * addFriend - Функция добавление в друзья (отправляет запрос на сервер)
+ * removeFriend - Функция удаления из друзей (отправляет запрос на сервер)
+ * @returns
+ * возвращает button с состоянием Добавить/Удалить
+ */
+
 import { FC } from "react";
 import { Button } from "../Button/Button";
 import { useParams } from "react-router-dom";

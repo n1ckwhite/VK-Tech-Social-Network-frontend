@@ -1,3 +1,11 @@
+/**
+ * @component
+ * Компонент-Header
+ * Содержит кнопку выйти, которая очищает localStorage и переносит на роут /login
+ * @returns
+ * возвращает Header
+ */
+
 import { FC } from "react";
 import styleHeader from "./Header.module.css";
 import { Button } from "../components/Button/Button";

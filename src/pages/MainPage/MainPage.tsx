@@ -1,3 +1,10 @@
+/**
+ * @component
+ * Страница-MainPage
+ * @returns
+ * возвращает MainPage - с информацией обо мне
+ */
+
 import { FC, useState } from "react";
 import { useGetUserQuery } from "../../service/api/userApi";
 import { Button } from "../../components/Button/Button";

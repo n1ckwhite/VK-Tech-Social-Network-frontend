@@ -1,3 +1,14 @@
+/**
+ * @component
+ * Компонент-ModalPhoto
+ * @props
+ * isActive - true/false - если активно, отображает попап
+ * closeModal - функция закрытия попапа
+ * imgSrc - путь картинки
+ * @returns
+ * возвращает ModalPhoto - отображает картинку
+ */
+
 import { Modal } from "../Modal/Modal";
 import { FC } from "react";
 import { IModalPhoto } from "../../types/types";

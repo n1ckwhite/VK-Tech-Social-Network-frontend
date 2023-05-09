@@ -1,3 +1,18 @@
+/**
+ * @component
+ * Компонент-Post
+ * Содержит функции редактирование и удаления поста
+ * Если idMe (мой id в localStorage) !== authorId, то я не могу удалять и редактировать пост
+ * @props
+ * photo - путь фото
+ * description - описание поста
+ * likes - колл-во лайков поста
+ * id - идентификатор поста
+ * authorId - id пользователя, кто создал пост
+ * @returns
+ * возвращает Post - отображает пост пользователя
+ */
+
 import { FC, useState } from "react";
 import stylePost from "./Post.module.css";
 import hearthImg from "../../icons/hearth.svg";

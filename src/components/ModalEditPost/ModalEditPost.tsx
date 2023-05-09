@@ -1,3 +1,16 @@
+/**
+ * @component
+ * Компонент-ModalEditPost
+ * @props
+ * id - получает id поста,
+ * isActive - true/false - если активно, отображает попап
+ * closeModal - функция закрытия попапа
+ * description - описание поста
+ * photo - фото поста
+ * @returns
+ * возвращает ModalEditPost - редактирование поста
+ */
+
 import { FC, SyntheticEvent, useState } from "react";
 import { Modal } from "../Modal/Modal";
 import { IModalEditPost } from "../../types/types";

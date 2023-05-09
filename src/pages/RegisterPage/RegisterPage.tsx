@@ -1,3 +1,11 @@
+/**
+ * @component
+ * Страница-RegisterPage
+ * Отправляет запрос на получение token и id, token отправляется в header {authorization} для доступа действий на сайте
+ * @returns
+ * возвращает RegisterPage -с полями email,name, password
+ */
+
 import React, { FC, SyntheticEvent, useState } from "react";
 import { Link, Redirect, useHistory } from "react-router-dom";
 import styleLoginAndRegPage from "../LoginPage/LoginAndRegPage.module.css";
