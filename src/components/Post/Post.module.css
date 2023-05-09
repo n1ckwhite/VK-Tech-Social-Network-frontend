@@ -22,6 +22,11 @@
   height: 100%;
   object-fit: cover;
   cursor: pointer;
+  background: #ddd;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .text {

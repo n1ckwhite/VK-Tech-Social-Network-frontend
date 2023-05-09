@@ -8,10 +8,11 @@ import { ErrorPage } from "../../pages/ErrorPage/ErrorPage";
 import { SearchPage } from "../../pages/SearchPage/SearchPage";
 import { UserPage } from "../../pages/UserPage/UserPage";
 import { FriendsPage } from "../../pages/FriendsPage/FriendsPage";
+import { PostsPage } from "../../pages/PostsPage/PostsPage";
 
 export const App: FC = () => {
   return (
-    <div>
+    <>
       <Switch>
         <ProtectedRoute path="/" exact={true}>
           <MainPage />
@@ -21,6 +22,9 @@ export const App: FC = () => {
         </ProtectedRoute>
         <ProtectedRoute path="/friends" exact={true}>
           <FriendsPage />
+        </ProtectedRoute>
+        <ProtectedRoute path="/posts" exact={true}>
+          <PostsPage />
         </ProtectedRoute>
         <Route path="/login" exact={true}>
           <LoginPage />
@@ -35,6 +39,6 @@ export const App: FC = () => {
           <ErrorPage />
         </Route>
       </Switch>
-    </div>
+    </>
   );
 };

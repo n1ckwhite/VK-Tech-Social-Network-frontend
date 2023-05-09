@@ -18,6 +18,12 @@ export const userApi = createApi({
       query: (id) => `/user/${id}`,
       providesTags: [{ type: "User", id: "Object" }],
     }),
+    getPosts: build.query({
+      query: () => ({
+        url: "/post/all",
+      }),
+      providesTags: [{ type: "User", id: "Object" }],
+    }),
     loginUser: build.mutation({
       query: (body) => ({
         url: "/user/login",
@@ -103,6 +109,7 @@ export const userApi = createApi({
 
 export const {
   useGetUserQuery,
+  useGetPostsQuery,
   useLoginUserMutation,
   useRegisterUserMutation,
   useEditUserProfileMutation,

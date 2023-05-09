@@ -95,6 +95,7 @@ export const MainPage: FC = () => {
                   return (
                     <li className={styleMainPage.li} key={post.id}>
                       <Post
+                        authorId={post.authorId}
                         id={post.id}
                         photo={post.photo}
                         description={post.description}

@@ -10,7 +10,7 @@ export const ModalPhoto: FC<IModalPhoto> = ({
   return (
     <Modal isActive={isActive} closeModal={closeModal}>
       <div className={styleModalPhoto.modal}>
-        <img className={styleModalPhoto.img} src={imgSrc} alt="Я" />
+        <img className={styleModalPhoto.img} src={imgSrc} alt="фото" />
       </div>
     </Modal>
   );

@@ -37,15 +37,16 @@ export interface IPost {
 }
 
 export interface User {
+  complete: Boolean;
   id: string;
-  email: string;
-  name: string;
-  photo: string;
-  city: string;
-  description: string;
-  univ: string;
+  email?: string;
+  name?: string;
+  photo?: string;
+  city?: string;
+  description?: string;
+  univ?: string;
   age: number;
-  posts?: Array<IPost>;
+  posts: Array<IPost>;
   friends?: [];
 }
 

@@ -3,15 +3,20 @@ import stylePost from "./Post.module.css";
 import hearthImg from "../../icons/hearth.svg";
 import editImg from "../../icons/edit.svg";
 import hearthActiveImg from "../../icons/hearthActive.svg";
-import { IPost, IQuizParams } from "../../types/types";
+import { IPost } from "../../types/types";
 import { useLikePostMutation } from "../../service/api/userApi";
 import { ModalConfirm } from "../ModalConfirm/ModalConfirm";
 import { ModalEditPost } from "../ModalEditPost/ModalEditPost";
 import { ModalPhoto } from "../ModalPhoto/ModalPhoto";
-import { useParams } from "react-router-dom";
-export const Post: FC<IPost> = ({ photo, description, likes, id }) => {
-  const params = useParams<IQuizParams>();
+export const Post: FC<IPost> = ({
+  photo,
+  description,
+  likes,
+  id,
+  authorId,
+}) => {
   const [activeModalConfirm, setActiveModalConfirm] = useState(false);
+  const idMe = window.localStorage.getItem("id");
   const [activeModalPostEditor, setActiveModalPostEditor] = useState(false);
   const [activePhoto, setActivePhoto] = useState(false);
   const [likePostApi] = useLikePostMutation();
@@ -54,21 +59,32 @@ export const Post: FC<IPost> = ({ photo, description, likes, id }) => {
   return (
     <>
       <span className={stylePost.post}>
-        {params.id !== undefined ? (
+        {idMe !== authorId ? (
           ""
         ) : (
           <button className={stylePost.delete} onClick={openModalConfirm}>
             &#10005;
           </button>
         )}
-        {params.id !== undefined ? (
+        {idMe !== authorId ? (
           ""
         ) : (
           <button onClick={openModalPostEditor} className={stylePost.edit}>
             <img className={stylePost.editImg} src={editImg} alt="редактор" />
           </button>
         )}
-        <img onClick={openPhoto} className={stylePost.img} src={photo} />
+        {photo.startsWith("https://") ? (
+          <img
+            onClick={openPhoto}
+            className={stylePost.img}
+            alt="фото"
+            src={photo}
+          />
+        ) : (
+          <div onClick={openPhoto} className={stylePost.img}>
+            Нет фото
+          </div>
+        )}
         <span className={stylePost.text}>
           <p className={stylePost.descr}>{description}</p>
           <span className={stylePost.likes}>
@@ -82,7 +98,7 @@ export const Post: FC<IPost> = ({ photo, description, likes, id }) => {
           </span>
         </span>
       </span>
-      {params.id !== undefined ? (
+      {idMe !== authorId ? (
         ""
       ) : (
         <ModalConfirm
@@ -91,7 +107,7 @@ export const Post: FC<IPost> = ({ photo, description, likes, id }) => {
           closeModal={closeModalConfrim}
         />
       )}
-      {params.id !== undefined ? (
+      {idMe !== authorId ? (
         ""
       ) : (
         <ModalEditPost

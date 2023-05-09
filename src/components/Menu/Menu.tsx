@@ -22,7 +22,7 @@ export const Menu: FC = () => {
         <Link className={styleMenu.link} to="/friends">
           Друзья
         </Link>
-        <Link className={styleMenu.link} to="/post">
+        <Link className={styleMenu.link} to="/posts">
           Новости
         </Link>
         <Link className={styleMenu.link} to="/mail">
@@ -49,7 +49,7 @@ export const Menu: FC = () => {
         <Link className={styleMenu.linkM} to="/friends">
           Друзья
         </Link>
-        <Link className={styleMenu.linkM} to="/post">
+        <Link className={styleMenu.linkM} to="/posts">
           Новости
         </Link>
         <Link className={styleMenu.linkM} to="/mail">

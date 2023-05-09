@@ -7,12 +7,16 @@ import cn from "classnames";
 export const CreatePost: FC = () => {
   const [err, setErr] = useState("");
   const id = window.localStorage.getItem("id");
-  const [photo, setPhoto] = useState("");
+  const [photo, setPhoto] = useState("https://");
   const [description, setDescription] = useState("");
   const [addPostUser] = useAddUserPostMutation();
 
   const addPost = () => {
-    if (photo.length !== 0 && description.length !== 0) {
+    if (
+      photo.length !== 0 &&
+      photo.startsWith("https://") &&
+      description.length !== 0
+    ) {
       addPostUser({ photo, description, likes: 0, id });
       setPhoto("");
       setDescription("");
