@@ -20,7 +20,7 @@ export const SearchPage: FC = () => {
   const [errMsg, setErrMsg] = useState("");
   const [resultUser, setResultUser] = useState([]);
   const [nameU, setNameU] = useState("");
-  const [searchUsers] = useSearchUsersMutation();
+  const [searchUsers, { isLoading }] = useSearchUsersMutation();
   const resultUsers = async (e: SyntheticEvent) => {
     e.preventDefault();
     if (nameU.length !== 0 || nameU !== "") {
@@ -66,6 +66,7 @@ export const SearchPage: FC = () => {
           )}
           <Button classname={styleSearchPage.btn} text="Поиск" />
         </form>
+        {isLoading ? <p className="load">Ждем...</p> : ""}
         {resultUser.length !== 0 ? (
           <p className={styleSearchPage.result}>Результат: </p>
         ) : (

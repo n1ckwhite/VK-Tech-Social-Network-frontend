@@ -21,7 +21,7 @@ export const RegisterPage: FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
-  const [register, { error }] = useRegisterUserMutation();
+  const [register, { error, isLoading }] = useRegisterUserMutation();
 
   const registerUser = async (e: SyntheticEvent) => {
     e.preventDefault();
@@ -88,6 +88,7 @@ export const RegisterPage: FC = () => {
             }
             required
           />
+          {isLoading ? <p className="load">Ждем...</p> : ""}
           {errMsg && <p className={styleLoginAndRegPage.errMsg}>{errMsg}</p>}
           <Button
             classname={

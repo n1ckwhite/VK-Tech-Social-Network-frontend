@@ -19,12 +19,13 @@ export const LoginPage: FC = () => {
   const [errMsg, setErrMsg] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loginUser, { error }] = useLoginUserMutation();
+  const [loginUser, { error, isLoading }] = useLoginUserMutation();
   const loginApp = async (e: SyntheticEvent) => {
     e.preventDefault();
     setEmail("");
     setPassword("");
     if (email && password.length >= 8) {
+      setErrMsg("");
       await loginUser({ email, password })
         .unwrap()
         .then((data) => {
@@ -72,7 +73,12 @@ export const LoginPage: FC = () => {
             }
             required
           />
-          {errMsg && <p className={styleLoginAndRegPage.errMsg}>{errMsg}</p>}
+          {isLoading ? <p className="load">Ждем...</p> : ""}
+          {errMsg ? (
+            <p className={styleLoginAndRegPage.errMsg}>{errMsg}</p>
+          ) : (
+            ""
+          )}
           <Button
             classname={
               errMsg ? styleLoginAndRegPage.mt0 : styleLoginAndRegPage.btn

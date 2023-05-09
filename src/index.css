@@ -7,3 +7,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: #061018;
 }
+
+.load {
+  margin: 0;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  font-size: 14px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}

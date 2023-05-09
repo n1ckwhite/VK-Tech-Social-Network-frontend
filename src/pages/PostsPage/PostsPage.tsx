@@ -14,10 +14,16 @@ import stylePostsPage from "./PostsPage.module.css";
 import { IPost, User } from "../../types/types";
 import { Link } from "react-router-dom";
 import { Post } from "../../components/Post/Post";
+import { Loading } from "../../components/Loading/Loading";
 
 export const PostsPage: FC = () => {
   const idMe = window.localStorage.getItem("id");
-  const { data } = useGetPostsQuery(idMe);
+  const { data, isLoading } = useGetPostsQuery(idMe);
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
   return (
     <>
       <Header />
@@ -26,7 +32,10 @@ export const PostsPage: FC = () => {
         <ul className={stylePostsPage.ul}>
           {data &&
             data.map((user: User) => {
-              if (user.id !== idMe || user.complete) {
+              if (
+                (user.id !== idMe && user.posts.length !== 0) ||
+                user.complete
+              ) {
                 return (
                   <li className={stylePostsPage.posts} key={user.id}>
                     <Link

@@ -17,7 +17,7 @@ export const CreatePost: FC = () => {
   const id = window.localStorage.getItem("id");
   const [photo, setPhoto] = useState("https://");
   const [description, setDescription] = useState("");
-  const [addPostUser] = useAddUserPostMutation();
+  const [addPostUser, { isLoading }] = useAddUserPostMutation();
 
   const addPost = () => {
     if (
@@ -26,7 +26,7 @@ export const CreatePost: FC = () => {
       description.length !== 0
     ) {
       addPostUser({ photo, description, likes: 0, id });
-      setPhoto("");
+      setPhoto("https://");
       setDescription("");
       setErr("");
     } else {
@@ -63,6 +63,7 @@ export const CreatePost: FC = () => {
         classname={styleCreatePost.btn}
         text="Написать пост"
       />
+      {isLoading ? <p className="load">Ждем...</p> : ""}
     </div>
   );
 };

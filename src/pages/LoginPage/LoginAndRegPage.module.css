@@ -37,7 +37,7 @@
 }
 
 .btn {
-  margin-top: 22px;
+  margin-top: 10px;
 }
 
 .mt0 {
@@ -64,7 +64,7 @@
 }
 
 .errMsg {
-  margin: 8px 0 0 0;
+  margin: 8px 0 8px 0;
   font-size: 12px;
   color: red;
   text-align: center;
