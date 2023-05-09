@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "version": "0.1.0",
-  "homepage": "https://github.com/n1ckwhite/VK-Tech-Social-Network-frontend",
+  "homepage": "https://n1ckwhite.github.io/VK-Tech-Social-Network-frontend",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",

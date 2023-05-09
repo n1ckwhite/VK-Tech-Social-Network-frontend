@@ -1,2 +1,2 @@
-export const API_USER: "http://localhost:8000/api/" =
-  "http://localhost:8000/api/";
+export const API_USER: "https://vk-backend-2851.onrender.com/api" =
+  "https://vk-backend-2851.onrender.com/api";
